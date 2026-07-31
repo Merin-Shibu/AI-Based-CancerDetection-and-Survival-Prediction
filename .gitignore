@@ -1,0 +1,8 @@
+datasets/
+*.zip
+venv/
+__pycache__/
+.ipynb_checkpoints/
+models/breast_stage_model.h5
+models/cancer_type_model.h5
+models/normal_abnormal_model.h5
