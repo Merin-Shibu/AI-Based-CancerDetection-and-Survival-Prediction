@@ -4,6 +4,7 @@ import joblib
 import pandas as pd
 import numpy as np
 import os
+import gdown
 from tensorflow.keras.preprocessing import image
 
 # -------------------------------
@@ -12,6 +13,24 @@ from tensorflow.keras.preprocessing import image
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_PATH, "../models")
 
+os.makedirs(MODEL_PATH, exist_ok=True)
+
+MODEL_FILES = {
+    "normal_abnormal_model.h5": "1D7oYw_PGK6QPhjxxEgcgUgCxikaDRGvV",
+    "cancer_type_model.h5": "1fDLrFd8t3TYSz60FTVGTBfYfUhW0yPR5",
+    "breast_stage_model.h5": "14wcU_3CY4Hfok32fZkRk51WKgJ8fF7xO"
+}
+
+def download_models():
+    for filename, file_id in MODEL_FILES.items():
+        filepath = os.path.join(MODEL_PATH, filename)
+
+        if not os.path.exists(filepath):
+            st.sidebar.info(f"Downloading {filename}...")
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, filepath, quiet=False)
+
+download_models()
 # -------------------------------
 # HELPER FUNCTIONS
 # -------------------------------
