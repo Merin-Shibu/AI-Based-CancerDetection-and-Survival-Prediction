@@ -12,6 +12,8 @@ The system analyzes medical images to detect abnormalities, classify cancer type
 
 > **Note:** This project is developed for educational purposes only and should not be used for real-world medical diagnosis.
 
+> **This project was developed as part of a team mini project.**
+
 ## Features
 
 - Normal vs Abnormal tissue detection
